@@ -28,7 +28,7 @@ export function handleActivate(event: ActivateEvent): void {
     event.transaction.hash.toHex() + "-" + event.logIndex.toString()
   )
   entity.borrower = event.params.borrower
-  entity.id = event.params.id
+  entity.id = event.params.id.toString()
   entity.amount = event.params.amount
   entity.save()
 }
@@ -38,7 +38,7 @@ export function handleAddCollateral(event: AddCollateralEvent): void {
     event.transaction.hash.toHex() + "-" + event.logIndex.toString()
   )
   entity.borrower = event.params.borrower
-  entity.id = event.params.id
+  entity.id = event.params.id.toString()
   entity.amount = event.params.amount
   entity.save()
 }
@@ -49,7 +49,7 @@ export function handleClosed(event: ClosedEvent): void {
   )
   entity.lender = event.params.lender
   entity.borrower = event.params.borrower
-  entity.id = event.params.id
+  entity.id = event.params.id.toString()
   entity.save()
 }
 
@@ -78,7 +78,7 @@ export function handlePropose(event: ProposeEvent): void {
     event.transaction.hash.toHex() + "-" + event.logIndex.toString()
   )
   entity.lender = event.params.lender
-  entity.id = event.params.id
+  entity.id = event.params.id.toString()
   entity.amount = event.params.amount
   entity.save()
 }
@@ -97,7 +97,7 @@ export function handleRepaid(event: RepaidEvent): void {
     event.transaction.hash.toHex() + "-" + event.logIndex.toString()
   )
   entity.lender = event.params.lender
-  entity.id = event.params.id
+  entity.id = event.params.id.toString()
   entity.amount = event.params.amount
   entity.save()
 }
@@ -107,7 +107,7 @@ export function handleRepay(event: RepayEvent): void {
     event.transaction.hash.toHex() + "-" + event.logIndex.toString()
   )
   entity.borrower = event.params.borrower
-  entity.id = event.params.id
+  entity.id = event.params.id.toString()
   entity.amount = event.params.amount
   entity.save()
 }
@@ -117,7 +117,7 @@ export function handleWithdrawCollateral(event: WithdrawCollateralEvent): void {
     event.transaction.hash.toHex() + "-" + event.logIndex.toString()
   )
   entity.borrower = event.params.borrower
-  entity.id = event.params.id
+  entity.id = event.params.id.toString()
   entity.amount = event.params.amount
   entity.save()
 }
